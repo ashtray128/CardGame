@@ -1,6 +1,4 @@
 #!/bin/python
-
-
 ''' 
 Structure of game data variable
 
@@ -44,7 +42,7 @@ board:
                 position [int]
             ...
 '''
-def setup(data:dict, playerdeck:arr, botdeck:arr) -> dict:
+def setup(data:dict, playerdeck:list, botdeck:list) -> dict: # Args: Main Game Data, the players full deck, and the bots full deck
     #? set up base categories
     data["player"] = {}
     data["bot"] = {}

@@ -1,10 +1,27 @@
 #!/bin/python
+'''
+main.py:
+    Main file
+    Should only be calling functions (except for the bit of code to import all the functions)
+    Handles data transfer between functions
 
-#* IMPORTING OTHER PROJECT FILES ------------------------------------------------------------------
-import func.display as display
-import func.setup as setup
+'''
 
 #* PUBLIC LIBRARIES ------------------------------------------------------------------
+import os
+
+#* IMPORTING OTHER PROJECT FILES ------------------------------------------------------------------
+imports = []
+def listfiles(path='.'):
+    for entry in os.listdir(path):
+        if "__pycache__" in entry: continue 
+        full_path = os.path.join(path, entry)
+        if os.path.isdir(full_path):
+            listfiles(full_path)
+        else: 
+            
+
+
 
 #* IMPORTANT VARIABLES ------------------------------------------------------------------
 
@@ -12,14 +29,8 @@ import func.setup as setup
 gameData:dict = {}
 
 #* CODE ------------------------------------------------------------------
+#? reset logs from previous run
+resetlogs.resetLogs()
+
 #? create basic game data
-gameData = setup.setupgamedata.setup()
-
-
-
-
-
-
-#* EXECUTION HANDLER ------------------------------------------------------------------
-if __name__ == "__main__":
-    pass
+#gameData = setup.setupgamedata.setup()
