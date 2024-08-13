@@ -9,6 +9,7 @@ main.py:
 
 #* PUBLIC LIBRARIES ------------------------------------------------------------------
 import os
+import sys
 
 #* IMPORTING OTHER PROJECT FILES ------------------------------------------------------------------
 imports = []
@@ -19,8 +20,10 @@ def listfiles(path='.'):
         if os.path.isdir(full_path):
             listfiles(full_path)
         else: 
-            
+            print(full_path)
 
+
+sys.exit()
 
 
 #* IMPORTANT VARIABLES ------------------------------------------------------------------
