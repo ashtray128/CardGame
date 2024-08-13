@@ -1,6 +1,7 @@
 #/bin/python
 import datetime
 from colorama import Fore
+import pytz 
 
 ''' 
 log
@@ -25,26 +26,24 @@ log
 def log(title:str,text:str=None):
     output = ""
 
-    output += Fore.RED
+    output += "----------------------------------------------------------------------"
 
     output += "\n"
 
-    output += datetime.datetime.now(datetime.timezone.est).astimezone().strftime("%m/%d/%Y %I:%M %p")
+    output += datetime.datetime.now(pytz.timezone("US/Eastern")).astimezone().strftime("%m/%d/%Y %I:%M %p")
 
-    output += "Title:"
+    output += "\nTitle: "
 
     output += title
 
     output += "\n"
 
     if text is not None:
-        output += "Text:"
+        output += "Text: "
 
-        output += text 
+        output += str(text) 
 
         output += "\n"
-    
-    output += "----------------------------------------------------------------------"
 
     with open('./data/logs/errors.txt', 'a') as f:
         f.write(output)

@@ -30,33 +30,29 @@ board:
             card2:
                 card [str]
                 position [int]
-            ...
-    
-    bot:
-        playingcards [dict]:
-            card1:
-                card [str]
-                position [int]
+            ...data:dict
             card2:
                 card [str]
                 position [int]
             ...
 '''
-def setup(data:dict, playerdeck:list, botdeck:list) -> dict: # Args: Main Game Data, the players full deck, and the bots full deck
+def setup(playerdeck:list, botdeck:list, settings:dict) -> dict: # Args: Main Game Data, the players full deck, and the bots full deck
+    data = {}
+   
     #? set up base categories
     data["player"] = {}
     data["bot"] = {}
     data["board"] = {}
 
     #? set up player level 2
-    data["player"]["name"] = ""
-    data["player"]["health"] = ""
+    data["player"]["name"] = settings["playerName"]
+    data["player"]["health"] = settings["playerBaseHealth"]
     data["player"]["statuseffects"] = []
     data["player"]["deck"] = playerdeck
 
     #? set up bot level 2
-    data["bot"]["name"] = ""
-    data["bot"]["health"] = ""
+    data["bot"]["name"] = settings["botName"]
+    data["bot"]["health"] = settings["botBaseHealth"]
     data["bot"]["statuseffects"] = []
     data["bot"]["deck"] = botdeck
 
@@ -71,3 +67,6 @@ def setup(data:dict, playerdeck:list, botdeck:list) -> dict: # Args: Main Game D
     #? set up board level 4
     data["board"]["player"]["playingcards"]  = {}
     data["board"]["bot"]["playingcards"] = {}
+
+
+    return data

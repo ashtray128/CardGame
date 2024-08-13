@@ -1,0 +1,19 @@
+{
+    "playerName":{
+        "value":"Basic",
+        "title":"Player's Name"
+    },
+    "playerBaseHealth":{
+        "value":30,
+        "title":"Player's Starting Health"
+    },
+
+    "botName":{
+        "value":"Gobby",
+        "title":"Bot's Name"
+    },
+    "botBaseHealth":{
+        "value":30,
+        "title":"Bot's Starting Health"
+    }
+}

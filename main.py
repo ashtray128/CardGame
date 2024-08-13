@@ -10,30 +10,33 @@ main.py:
 #* PUBLIC LIBRARIES ------------------------------------------------------------------
 import os
 import sys
+from colorama import Fore
 
 #* IMPORTING OTHER PROJECT FILES ------------------------------------------------------------------
-imports = []
-def listfiles(path='.'):
-    for entry in os.listdir(path):
-        if "__pycache__" in entry: continue 
-        full_path = os.path.join(path, entry)
-        if os.path.isdir(full_path):
-            listfiles(full_path)
-        else: 
-            print(full_path)
+import func.logging.resetlogs as resetlogs
+import func.logging.logerror as logerror
 
+import func.setup.getinfo as getinfo 
+import func.setup.parsecardinfo as parsecardinfo 
+import func.setup.parsesettings as parsesettings 
+import func.setup.setupgamedata as setupgamedata 
 
-sys.exit()
+import func.display.display as display
 
-
-#* IMPORTANT VARIABLES ------------------------------------------------------------------
-
-# this is what holds all the important game data like current deck, health, wtv
-gameData:dict = {}
 
 #* CODE ------------------------------------------------------------------
 #? reset logs from previous run
 resetlogs.resetLogs()
 
+#? get the settings
+settings = parsesettings.parseSettings()
+
+#? get and parse the decks
+playerDeck = getinfo.getDeck(1)
+
+botDeck = getinfo.getDeck(2)
+
 #? create basic game data
-#gameData = setup.setupgamedata.setup()
+gameData = setupgamedata.setup(playerDeck, botDeck, settings)
+
+print(gameData)

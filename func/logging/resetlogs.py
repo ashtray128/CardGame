@@ -9,4 +9,5 @@ resetLogs:
 '''
 def resetLogs():
     for log in os.listdir('./data/logs'):
-        print(log)
+        with open(f'./data/logs/{log}', 'w') as f:
+            f.write("")
