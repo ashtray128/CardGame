@@ -23,20 +23,30 @@ import func.setup.setupgamedata as setupgamedata
 
 import func.display.display as display
 
+import func.cards.cardfunctions as cardfunctions
+
 
 #* CODE ------------------------------------------------------------------
-#? reset logs from previous run
-resetlogs.resetLogs()
+def main():
+    #? reset logs from previous run
+    resetlogs.resetLogs()
 
-#? get the settings
-settings = parsesettings.parseSettings()
+    #? get the settings
+    settings = parsesettings.parseSettings()
 
-#? get and parse the decks
-playerDeck = getinfo.getDeck(1)
+    #? get and parse the decks
+    playerDeck = getinfo.getDeck(1)
 
-botDeck = getinfo.getDeck(2)
+    botDeck = getinfo.getDeck(2)
 
-#? create basic game data
-gameData = setupgamedata.setup(playerDeck, botDeck, settings)
+    #? create basic game data
+    gameData = setupgamedata.setup(playerDeck, botDeck, settings)
 
-print(gameData)
+    #? create card data
+    cards = parsecardinfo.parseCards()
+
+    #? set up card handler
+    cardHandler = cardfunctions.CardHandler(cards)
+
+if __name__ == "__main__":
+    main()

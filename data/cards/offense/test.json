@@ -1,0 +1,8 @@
+{
+    "name":"basicAttack",
+    "shownName":"Basic Attack",
+    
+    "useFunctions":["damagePlayer"],
+    "defendFunctions":[],
+    "sacrificeFunctions":[]
+}
