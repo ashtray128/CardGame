@@ -1,0 +1,12 @@
+{
+    "name":"commonPistol",
+    "shownName":"Common Pistol",
+    "rarity":"common",
+    
+    "useFunctions":["damagePlayerPistol"],
+    "useParameters":[5],
+    "defendFunctions":["dodge"],
+    "defendParameters":["common"],
+    "sacrificeFunctions":["goldGain"],
+    "sacrificeParameters":[10]
+}

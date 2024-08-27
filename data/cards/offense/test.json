@@ -1,6 +1,7 @@
 {
     "name":"basicAttack",
     "shownName":"Basic Attack",
+    "rarity":"Debug",
     
     "useFunctions":["damagePlayer"],
     "defendFunctions":[],

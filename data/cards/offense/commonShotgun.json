@@ -1,0 +1,12 @@
+{
+    "name":"commonShotgun",
+    "shownName":"Common Shotgun",
+    "rarity":"common",
+    
+    "useFunctions":["damagePlayerShotgun"],
+    "useParameters":[3, 5],
+    "defendFunctions":["dodge"],
+    "defendParameters":["common"],
+    "sacrificeFunctions":["goldGain"],
+    "sacrificeParameters":[10]
+}

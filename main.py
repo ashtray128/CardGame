@@ -2,8 +2,7 @@
 '''
 main.py:
     Main file
-    Should only be calling functions (except for the bit of code to import all the functions)
-    Handles data transfer between functions
+    Handles calling scenes and scene management
 
 '''
 
